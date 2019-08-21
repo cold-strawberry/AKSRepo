@@ -1,0 +1,143 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+// default value: 500
+
+$bb-gold: (
+  50 : #f7f3ef,
+  100 : #eae2d6,
+  200 : #ddcfbb,
+  300 : #cfbc9f,
+  400 : #c4ad8b,
+  500 : #ba9f76,
+  600 : #b3976e,
+  700 : #ab8d63,
+  800 : #a38359,
+  900 : #947246,
+  A100 : #fff7ed,
+  A200 : #ffe0ba,
+  A400 : #ffca87,
+  A700 : #ffbe6e,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: $black-87-opacity,
+    400: $black-87-opacity,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: $black-87-opacity,
+    A200: $black-87-opacity,
+    A400: $black-87-opacity,
+    A700: white,
+  )
+);
+
+
+
+
+
+$bb-app-primary: mat-palette($bb-gold);
+$bb-app-accent: mat-palette($bb-gold, A200, A100, A400);
+$bb-app-hover: mat-palette($bb-gold, A100, A200);
+$bb-disabled: mat-palette($bb-gold, 600, A700);
+$bb-disabled-font-color: mat-palette($bb-gold, 900, A100);
+$bb-app-warn: mat-palette($mat-red);
+// $bb-app-foreground: mat-palette();
+// $bb-app-background: mat-palette($bb-gold);
+
+$bb-app-theme: mat-light-theme($bb-app-primary, $bb-app-accent);
+
+$primary: mat-color($bb-app-primary);
+$hover-color: mat-color($bb-app-accent);
+$disabled-color: mat-color($bb-disabled);
+$hover-background-color: transparent!important;
+
+// default value: rgba(0, 0, 0, 0.42);
+$bb-theme-underline-color: rgba(255, 255, 255, 0.42);
+
+// default value: 0 11px 15px -7px rgba(0, 0, 0, .2), 0 24px 38px 3px rgba(0, 0, 0, .14), 0 9px 46px 8px rgba(0, 0, 0, .12);
+$bb-theme-box-shadow-color: 0 11px 15px -7px rgba(255, 255, 255, .2), 0 24px 38px 3px rgba(255, 255, 255, .14), 0 9px 46px 8px rgba(255, 255, 255, .12);
+
+$bb-theme-primary-font-color: #fff;
+$bb-theme-primary-background-color: #000 !important;
+$bb-theme-disabled-background-color: rgba(179, 151, 110, 0.42)!important;
+$bb-theme-disabled-font-color: mat-color($bb-disabled-font-color, 0.42)!important;
+$bb-theme-list-hover-background-color: mat-color($bb-app-hover)!important;
+
+
+$bb-theme-default-background-color: #000;
+$bb-theme-default-font-color: #fff;
+$bb-theme-default-hover-background-color: rgba(255, 255, 255, 0.26);
+$bb-theme-default-active-background-color: mat-color($bb-app-hover);;
+/*
+
+// Create the theme object (a Sass map containing all of the palettes).
+$theme: mat-light-theme($primary, $accent, $warn);
+
+// Insert custom background color
+$background: map-get($theme, background);
+$background: map_merge($background, (background: $background-color));
+$theme: map_merge($theme, (background: $background));
+
+*/
+
+$my-dark-theme-background: (
+  status-bar: map_get($bb-gold, 500),
+  app-bar:    map_get($bb-gold, 500),
+  background: $bb-theme-default-background-color,
+  hover:      rgba(white, 0.04),
+  card:      $bb-theme-default-background-color, // map_get($mat-red, 800),
+  dialog:     $bb-theme-default-background-color, // map_get($mat-grey, 800),
+  disabled-button: $white-12-opacity,
+  raised-button: map-get($bb-gold, 800),
+  stroked-button: map-get($bb-gold, 800),
+  focused-button: transparent,
+  selected-button: map_get($bb-gold, 900),
+  selected-disabled-button: map_get($bb-gold, 800),
+  disabled-button-toggle: rgba(white, 0.3),
+  unselected-chip: map_get($mat-grey, 700),
+  disabled-list-option: rgba(white, 0.3),
+);
+
+$my-dark-theme-foreground: (
+  base:              #fff,
+  divider:           $white-12-opacity,
+  dividers:          $white-12-opacity,
+  disabled:          rgba(white, 0.3),
+  disabled-button:   rgba(white, 0.3),
+  disabled-text:     rgba(white, 0.3),
+  hint-text:         rgba(white, 0.3),
+  secondary-text:    rgba(white, 0.7),
+  icon:              white,
+  icons:             white,
+  text:              #fff,
+  slider-min:        white,
+  slider-off:        rgba(white, 0.3),
+  slider-off-active: rgba(white, 0.3),
+);
+
+// instead of creating a theme with mat-light-theme like a sane person, we will create our own theme-creating function that lets us apply our own foreground and background palettes.
+@function create-wonky-theme($primary, $accent, $warn: mat-palette($mat-red)) {
+  @return (
+    primary: $primary,
+    accent: $accent,
+    warn: $warn,
+    is-dark: false,
+    foreground: $my-dark-theme-foreground,
+    background: $my-dark-theme-background,
+  );
+}
+
+// The rest of this is like a normal theme.scss file. The only difference being that we use create-wonky-theme instead of mat-light-theme
+$custom-theme-primary: mat-palette($bb-gold);
+$custom-theme-accent: mat-palette($mat-blue);
+$custom-theme-warn: mat-palette($mat-red);
+
+$bb-app-theme: create-wonky-theme($custom-theme-primary, $custom-theme-accent, $custom-theme-warn);
+
+@include angular-material-theme($bb-app-theme);
