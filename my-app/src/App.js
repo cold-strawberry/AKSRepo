@@ -4,8 +4,26 @@ import { createMuiTheme } from '@material-ui/core/styles';
 import React, { Component } from 'react';
 import MaterialTable from 'material-table';
 
+
 let direction = 'ltr';
 const theme = createMuiTheme({
+  overrides: {
+    MuiGrid: {
+        container: {
+          backgroundColor: 'red',
+        },
+        item: {
+          backgroundColor: 'green',
+          grid: {
+            backgroundColor: 'purple',
+            xs: {
+              backgroundColor: 'aqua',
+            }
+          }
+        }
+
+    }
+  },
   direction: direction,
   palette: {
     primary: {
@@ -38,15 +56,15 @@ class App extends Component {
 
     ],
     columns: [
-      { title: 'Name', field: 'name', filterPlaceholder: 'Name filter', editable: 'true', cellStyle: { fontSize: '12px', borderBottom: '0.7px solid #ba9f76', backgroundColor: '#000', color: '#FFF', padding: '0 0 0 0', lineHeight: '2px' }, headerStyle: { fontSize: '12.5px',  borderBottom: '2px solid #ba9f76', borderTop: '2px solid #ba9f76', backgroundColor: '#000', color: '#FFF', padding: '0 0 0 0', lineHeight: '5px' }},
-      { title: 'Surname', field: 'surname', filterPlaceholder: 'Surname filter', initialEditValue: 'Surname', cellStyle: { fontSize: '12px', borderBottom: '0.7px solid #ba9f76', backgroundColor: '#222', color: '#FFF', padding: '0 0 0 0', lineHeight: '2px' }, headerStyle: { fontSize: '12.5px',  borderBottom: '2px solid #ba9f76', borderTop: '2px solid #ba9f76', backgroundColor: '#222', color: '#FFF', padding: '0 0 0 0', lineHeight: '5px' }},
-      { title: 'Marital Status', field: 'isMarried', type: 'boolean', cellStyle: { fontSize: '12px', width: '150px', borderBottom: '0.7px solid #ba9f76', backgroundColor: '#000', color: '#fff', padding: '0 0 0 0', lineHeight: '2px' }, headerStyle: { fontSize: '12.5px',  width: '150px', borderBottom: '2px solid #ba9f76', borderTop: '2px solid #ba9f76', backgroundColor: '#000', color: '#FFF', padding: '0 0 0 0', lineHeight: '5px' }},
-      { title: 'Sex', field: 'sex', disableClick: true, editable: 'onAdd', cellStyle: { fontSize: '12px', borderBottom: '0.7px solid #ba9f76', backgroundColor: '#222', color: '#FFF', padding: '0 0 0 0', lineHeight: '2px' }, headerStyle: { fontSize: '12.5px',  borderBottom: '2px solid #ba9f76', borderTop: '2px solid #ba9f76', backgroundColor: '#222', color: '#FFF', padding: '0 0 0 0', lineHeight: '5px' }},
-      { title: 'Type', field: 'type', removable: false, editable: 'never', cellStyle: { fontSize: '12px', borderBottom: '0.7px solid #ba9f76', backgroundColor: '#000', color: '#fff', padding: '0 0 0 0', lineHeight: '2px' }, headerStyle: { fontSize: '12.5px',  borderBottom: '2px solid #ba9f76', borderTop: '2px solid #ba9f76', backgroundColor: '#000', color: '#FFF', padding: '0 0 0 0', lineHeight: '5px' }},
-      { title: 'Birth Date', field: 'birthDate', type: 'date', cellStyle: { fontSize: '12px', borderBottom: '0.7px solid #ba9f76', backgroundColor: '#222', color: '#FFF', padding: '0 0 0 0', lineHeight: '2px' }, headerStyle: { fontSize: '12.5px',  borderBottom: '2px solid #ba9f76', borderTop: '2px solid #ba9f76', backgroundColor: '#222', color: '#FFF', padding: '0 0 0 0', lineHeight: '5px' }},
-      { title: 'City', field: 'birthCity', lookup: { 0: 'Lucknow', 1: 'Paris', 2: 'Tokyo', 3: 'Munich', 4: 'Singapore' }, cellStyle: { fontSize: '12px', borderBottom: '0.7px solid #ba9f76', backgroundColor: '#000', color: '#fff', padding: '0 0 0 0', lineHeight: '2px' }, headerStyle: { fontSize: '12.5px',  borderBottom: '2px solid #ba9f76', borderTop: '2px solid #ba9f76', backgroundColor: '#000', color: '#FFF', padding: '0 0 0 0', lineHeight: '5px' }},
-      { title: 'Date', field: 'insertDateTime', type: 'datetime', cellStyle: { fontSize: '12px', borderBottom: '0.7px solid #ba9f76', backgroundColor: '#222', color: '#FFF', padding: '0 0 0 0', lineHeight: '2px' }, headerStyle: { fontSize: '12.5px',  borderBottom: '2px solid #ba9f76', borderTop: '2px solid #ba9f76', backgroundColor: '#222', color: '#FFF', padding: '0 0 0 0', lineHeight: '5px' }},
-      { title: 'Time', field: 'time', type: 'time', cellStyle: { fontSize: '12px', borderBottom: '0.7px solid #ba9f76', backgroundColor: '#000', color: '#fff', padding: '0 0 0 0', lineHeight: '2px' }, headerStyle: { fontSize: '12.5px',  borderBottom: '2px solid #ba9f76', borderTop: '2px solid #ba9f76', backgroundColor: '#000', color: '#FFF', padding: '0 0 0 0', lineHeight: '5px' }},
+      { title: 'Name', field: 'name', filterPlaceholder: 'Name filter', editable: 'true'},
+      { title: 'Surname', field: 'surname', filterPlaceholder: 'Surname filter', initialEditValue: 'Surname'},
+      { title: 'Marital Status', field: 'isMarried', type: 'boolean' },
+      { title: 'Sex', field: 'sex', disableClick: true, editable: 'onAdd' },
+      { title: 'Type', field: 'type', removable: false, editable: 'never', },
+      { title: 'Birth Date', field: 'birthDate', type: 'date' },
+      { title: 'City', field: 'birthCity', lookup: { 0: 'Lucknow', 1: 'Paris', 2: 'Tokyo', 3: 'Munich', 4: 'Singapore' } },
+      { title: 'Date', field: 'insertDateTime', type: 'datetime'},
+      { title: 'Time', field: 'time', type: 'time'},
     ],
   }
 
@@ -54,10 +72,10 @@ class App extends Component {
     return (
       <div>
         <MuiThemeProvider theme={theme}>
-          <div style={{ maxWidth: '100%', direction, /*backgroundColor: '#222'*/ }}>
+          <div style={{ maxWidth: '100%', direction }}>
             <Grid container>
               <Grid item xs={12}>
-                <MaterialTable style={ { /*backgroundColor: '#222',*/ color: '#fff' } }
+                <MaterialTable /*style={ { backgroundColor: '#222', color: '#fff' } }*/
                   tableRef={this.tableRef}
                   columns={this.state.columns}
                   data={this.state.data}
