@@ -1,6 +1,16 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 const tabletheme = createMuiTheme({
 	overrides: {
+		MuiPaper: {
+			root: {
+				margin: '50px 50px',
+			},
+			elevation2: {
+				boxShadow: '2px 2px 2px 2px red'
+			}
+
+		},
+
 		MuiToolbar: {
 			regular: {
 				minHeight: '20px',
@@ -131,28 +141,26 @@ const tabletheme = createMuiTheme({
 					color: '#ba9f76',
 					fontSize: 12,
 					fontWeight: 500,
-					backgroundColor: '#000'
+					backgroundColor: '#000',
+					'&.MuiTableSortLabel-root:hover .MuiTableSortLabel-icon': {
+						color: "white !important",
+					}
 				},
+
 				'&:focus': {
 					color: '#ba9f76',
 					fontSize: 13,
 					fontWeight: 500,
 					backgroundColor: '#000'
 				},
+				'&.MuiTableSortLabel-icon': {
+					color: '#505050 !important',
+				},
 				'&.MuiTableSortLabel-active': {
 					color: '#d49028',
 					fontSize: 13,
 					fontWeight: 500,
 					backgroundColor: '#000'
-					// '&.MuiTableSortLabel-root.MuiTableSortLabel-active .MuiTableSortLabel': {
-					// 	icon: {
-					// 		opacity: 1,
-					// 		height: 'auto',
-					// 		width: 'auto',
-					// 		marginLeft: 0,
-					// 		color: '#272424'
-					// 	}
-					// }
 				}
 
 			},
@@ -160,8 +168,14 @@ const tabletheme = createMuiTheme({
 				opacity: 1,
 				height: 'auto',
 				width: 'auto',
-				marginLeft: 0,
-				color: '#272424'
+                marginLeft: 0,
+                fontSize: 15,
+				'&.MuiTableSortLabel-iconDirectionAsc': {
+					color: '#505050 !important',
+				},
+				'&.MuiTableSortLabel-iconDirectionDesc': {
+					color: '#505050 !important',
+				},
 			}
 
 

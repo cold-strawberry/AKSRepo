@@ -3,13 +3,13 @@ import { MuiThemeProvider } from '@material-ui/core';
 import MaterialTable from 'material-table';
 import Button from '@material-ui/core/Button';
 import tabletheme from '../utils/tableTheme';
+//import tabletheme from '../utils/tableTheme1';
 
 
 class UserCreationApproval extends Component {
 
 	render() {
 		return (
-			// <div style={ { margin: '50px 50px 0 50px', boxShadow: '0px 0px 5px 2px rgba(255, 255, 255, 0.8)', borderRadius: '5px' } }>
 			<MuiThemeProvider theme={tabletheme}>
 				<MaterialTable title='Pending Approvals' style={ { borderRadius: '8px !important' } }
 					columns={[
@@ -119,7 +119,6 @@ class UserCreationApproval extends Component {
 					}}
 				/>
 			</ MuiThemeProvider>
-			//</div>
 
 		);
 	}
