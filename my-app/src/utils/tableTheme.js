@@ -20,8 +20,8 @@ const tabletheme = createMuiTheme({
 			root: {
 				height: '50px',
 				minHeight: '50px',
-				//backgroundColor: '#000',
-				backgroundColor: 'green'
+				backgroundColor: '#000',
+				//backgroundColor: 'green'
 			},
 		},
 		MuiTable: {
@@ -133,9 +133,12 @@ const tabletheme = createMuiTheme({
 		},
 		MuiSelect: {
 			select: {
-				border: '1px solid #ba9f76',
+				border: '0.8px solid #ba9f76',
 				borderRadius: '2px',
 				color: '#fff',
+			},
+			icon: {
+				color: '#ba9f76'
 			}
 		},
 		MuiTableSortLabel: {
