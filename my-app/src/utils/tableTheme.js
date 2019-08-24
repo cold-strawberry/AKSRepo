@@ -128,34 +128,41 @@ const tabletheme = createMuiTheme({
 		MuiTableSortLabel: {
 			root: {
 				'&:hover': {
-					color: 'red',
-					fontSize: 15,
+					color: '#ba9f76',
+					fontSize: 12,
 					fontWeight: 500,
 					backgroundColor: '#000'
 				},
 				'&:focus': {
-					color: 'yellow',
+					color: '#ba9f76',
 					fontSize: 13,
 					fontWeight: 500,
 					backgroundColor: '#000'
-				},
-				'&:active': {
-					color: 'aqua !important',
-					fontSize: 13,
-					fontWeight: 500,
-					backgroundColor: '#000'
-				},
-				'&:visited': {
-					color: 'green !important',
-					fontSize: 13,
-					fontWeight: 500,
-					backgroundColor: '#000'					
 				},
 				'&.MuiTableSortLabel-active': {
-					color: 'blue !important',
+					color: '#d49028',
+					fontSize: 13,
+					fontWeight: 500,
+					backgroundColor: '#000'
+					// '&.MuiTableSortLabel-root.MuiTableSortLabel-active .MuiTableSortLabel': {
+					// 	icon: {
+					// 		opacity: 1,
+					// 		height: 'auto',
+					// 		width: 'auto',
+					// 		marginLeft: 0,
+					// 		color: '#272424'
+					// 	}
+					// }
 				}
 
 			},
+			icon: {
+				opacity: 1,
+				height: 'auto',
+				width: 'auto',
+				marginLeft: 0,
+				color: '#272424'
+			}
 
 
 		},
