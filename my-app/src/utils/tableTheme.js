@@ -213,7 +213,26 @@ const tabletheme = createMuiTheme({
 					
 				 }				 
 			}
+		},
+		MuiMenu: {
+			list: {
+				backgroundColor: '#000',
+				border: '1px solid #ba9f76',
+				color: '#ba9f76',
+				borderRadius: '4px'
+			}
 		}
+		// MuiMenuItem:{
+		// 	root: {
+		// 		backgroundColor: '#000',
+		// 		color: '#ba9f76',
+		// 		border: '0.8px solid #ba9f76',
+		// 		boxShadow: '2px 2px 2px 2px red',
+		// 		lineHeight: 1
+
+
+		// 	}
+		// }
 	},
 });
 
