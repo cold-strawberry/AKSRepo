@@ -1,20 +1,20 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 const tabletheme = createMuiTheme({
 	overrides: {
-		MuiPaper: {
-			root: {
-				margin: '50px 50px',
-			},
-			elevation2: {
-				boxShadow: '2px 2px 2px 2px red'
-			}
+		// MuiPaper: {
+		// 	root: {
+		// 		margin: '50px 50px',
+		// 	},
+		// 	elevation2: {
+		// 		boxShadow: '2px 2px 2px 2px red'
+		// 	}
 
-		},
+		// },
 
 		MuiToolbar: {
 			regular: {
 				minHeight: '20px',
-				borderTop: '1px solid #ba9f76',
+				//borderTop: '1px solid #ba9f76',
 				color: '#fff',
 			},
 			root: {
@@ -95,12 +95,12 @@ const tabletheme = createMuiTheme({
 				fontSize: '10px'
 			}
 		},
-		MuiTablePagination: {
-			root: {
-				borderBottom: '1px solid #ba9f76',
-			},
+		// MuiTablePagination: {
+		// 	root: {
+		// 		borderBottom: '1px solid #ba9f76',
+		// 	},
 
-		},
+		// },
 		MuiButton: {
 			containedPrimary: {
 				minWidth: '10px',
