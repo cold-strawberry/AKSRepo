@@ -176,6 +176,7 @@ const tabletheme = createMuiTheme({
 				'&.MuiTableSortLabel-iconDirectionDesc': {
 					color: '#505050 !important',
 				},
+				
 			}
 
 
@@ -192,6 +193,24 @@ const tabletheme = createMuiTheme({
 				}
 			}
 		},
+		MuiIcon: {
+			fontSizeSmall:{
+				color: '#ba9f76'
+			}
+		},
+		MuiIconButton:{
+			root: {
+				color: '#ba9f76',
+				'&:hover': {
+					backgroundColor: 'rgba(168,146, 18, 0.6)'
+					
+				 },
+				 '&.Mui-disabled': {
+					color: 'rgba(168,146, 18, 0.6)'
+					
+				 }				 
+			}
+		}
 	},
 });
 
