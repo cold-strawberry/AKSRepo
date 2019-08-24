@@ -126,6 +126,9 @@ const tabletheme = createMuiTheme({
 				fontSize: '16px',
 				fontWeight: 500,
 				color: '#ba9f76'
+			},
+			caption: { 
+				color: '#fff'
 			}
 		},
 		MuiSelect: {
