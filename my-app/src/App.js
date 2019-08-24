@@ -1,10 +1,10 @@
 import React from 'react';
-import TableComponent from './component/table-component.js';
+import UserCreationApproval from './component/UserCreationApproval';
 
 function App() {
   return (
     <div className="App">
-      <TableComponent />
+      <UserCreationApproval />
     </div>
   );
 }
