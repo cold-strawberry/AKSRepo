@@ -128,23 +128,32 @@ const tabletheme = createMuiTheme({
 		MuiTableSortLabel: {
 			root: {
 				'&:hover': {
-					color: '#ba9f76',
+					color: 'red',
 					fontSize: 15,
 					fontWeight: 500,
 					backgroundColor: '#000'
 				},
 				'&:focus': {
-					color: '#da9c3f',
+					color: 'yellow',
 					fontSize: 13,
 					fontWeight: 500,
 					backgroundColor: '#000'
 				},
-				'active': {
-					color: 'yellow !important',
+				'&:active': {
+					color: 'aqua !important',
 					fontSize: 13,
 					fontWeight: 500,
 					backgroundColor: '#000'
 				},
+				'&:visited': {
+					color: 'green !important',
+					fontSize: 13,
+					fontWeight: 500,
+					backgroundColor: '#000'					
+				},
+				'&.MuiTableSortLabel-active': {
+					color: 'blue !important',
+				}
 
 			},
 
